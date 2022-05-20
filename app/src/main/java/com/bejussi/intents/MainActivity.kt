@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             putExtra(Intent.EXTRA_TEXT,stringMessage)
         }
         // TODO: use an intent chooser to force a choose dialog
-
+        val chooser = Intent.createChooser(intent,"Select an app:")
 
         // TODO: Verify that the intent will resolve to an activity
         startActivity(intent)
