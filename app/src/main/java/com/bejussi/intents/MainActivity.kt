@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val intent = Intent(this, DestinationActivity::class.java)
 
         // TODO: send data along with the Intent to the destination
-
+        intent.putExtra("StringValue","Hello!")
+        intent.putExtra("IntValue",12345)
 
         // TODO: Start the activity with our explicit intent
         startActivity(intent)
@@ -37,10 +38,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun createImplicitIntent() {
         // TODO: Build an implicit intent to handle a type of action
         val stringMessage = R.string.stringMessage
-        val intent = Intent()
-        intent.action = Intent.ACTION_SEND
-        intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_TEXT,stringMessage)
+        val intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT,stringMessage)
+        }
         // TODO: use an intent chooser to force a choose dialog
 
 
