@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Intents</string>
+    <string name="createExpl">Create Explicit Intent</string>
+    <string name="createImpl">Create Implicit Intent</string>
+    <string name="mainActTItle">Basic Intents</string>
+    <string name="strDestActivityTitle">Destination Activity</string>
+    <string name="stringMessage">This is a sample message!</string>
+    <string name="welcome_messages">%1$s! You have %2$d new messages.</string>
 </resources>
