@@ -1,8 +1,6 @@
 package com.bejussi.intents
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.SearchManager
+import android.app.*
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -10,10 +8,14 @@ import android.os.Bundle
 import android.provider.AlarmClock
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
 import kotlinx.android.synthetic.main.activity_apps.*
 
 
 class AppsActivity : AppCompatActivity(), View.OnClickListener {
+
+    private val NOTIFY_ID = 1001
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_apps)
@@ -133,6 +135,28 @@ class AppsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun pendIntent() {
-        TODO("Not yet implemented")
+        val builder = NotificationCompat.Builder(this, "my_channel")
+
+        // TODO: Create the intent that will be fired when the user taps the notification
+        val intent = Intent(this,DestinationActivity::class.java).apply {
+            putExtra("StringValue","Hello from notification!")
+            putExtra("IntValue",12345)
+        }
+        // TODO: Wrap it up in a PendingIntent
+        val pendingIntent = PendingIntent.getActivity(this,NOTIFY_ID, intent, PendingIntent.FLAG_CANCEL_CURRENT)
+
+        // TODO: Wrap it up in a PendingIntent
+        builder.setSmallIcon(R.drawable.ic_launcher_foreground)
+        builder.setContentTitle("Sample Notification")
+        builder.setContentText("This is a sample notification")
+        builder.setAutoCancel(true)
+        builder.setSubText("Tap to view")
+
+        // TODO: add the pending intent to the builder
+        builder.setContentIntent(pendingIntent)
+
+        val notification: Notification = builder.build()
+        val mgr = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        mgr.notify(NOTIFY_ID, notification)
     }
 }
