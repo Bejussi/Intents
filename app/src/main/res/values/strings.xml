@@ -15,4 +15,11 @@
     <string name="open_url_in_browser">Open URL in Browser</string>
     <string name="send_a_text_message">Send a Text Message</string>
     <string name="capture_a_photo">Capture a Photo</string>
+    <string name="application_intents">Application Intents</string>
+    <string name="set_an_alarm">Set an Alarm</string>
+    <string name="show_a_location_on_map">Show A Location On Map</string>
+    <string name="send_an_email_message">Send an Email Message</string>
+    <string name="start_a_phone_call">Start a Phone Call</string>
+    <string name="perform_a_web_search">Perform a Web Search</string>
+    <string name="pending_intent">Pending Intent</string>
 </resources>
