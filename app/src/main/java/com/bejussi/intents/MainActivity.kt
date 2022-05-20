@@ -13,13 +13,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         create_implicit.setOnClickListener(this)
         create_explicit.setOnClickListener(this)
+        btnMediaIntents.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
         when(p0) {
             create_implicit -> createImplicitIntent()
             create_explicit -> createExplicitIntent()
+            btnMediaIntents -> openMediaIntent()
         }
+    }
+
+    private fun openMediaIntent() {
+        val intent = Intent(this,MediaActivity::class.java)
+        startActivity(intent)
     }
 
     private fun createExplicitIntent() {

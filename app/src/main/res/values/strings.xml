@@ -6,4 +6,13 @@
     <string name="strDestActivityTitle">Destination Activity</string>
     <string name="stringMessage">This is a sample message!</string>
     <string name="welcome_messages">%1$s! You have %2$d new messages.</string>
+    <string name="strMediaTitle">Media Intents</string>
+    <string name="btnStartCamera">Start Camera for Photo</string>
+    <string name="strMediaIntents">Media Intents</string>
+    <string name="strAppIntents">App Intents</string>
+    <string name="strDataIntents">Data Intents</string>
+    <string name="strCommonIntentsTitle">Common Intents</string>
+    <string name="open_url_in_browser">Open URL in Browser</string>
+    <string name="send_a_text_message">Send a Text Message</string>
+    <string name="capture_a_photo">Capture a Photo</string>
 </resources>
